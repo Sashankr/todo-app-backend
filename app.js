@@ -19,8 +19,10 @@ app.get("/", (req, res) => {
 
 app.post("/addToDo", (req, res) => {
   console.log(req.body);
+  res.statusCode = 201;
+  res.send({
+    message: "Added Successfully",
+  });
 });
-
-app.set("view engine", "ejs");
 
 app.listen(3000, () => console.log("Server Running"));
