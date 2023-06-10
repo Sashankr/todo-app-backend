@@ -8,6 +8,7 @@ const { MongoClient } = require("mongodb");
 
 // Replace the uri string with your connection string.
 const uri = process.env.DB_CONNECT;
+const PORT = process.env.PORT || 3000;
 
 const client = new MongoClient(uri);
 
@@ -54,4 +55,4 @@ app.post("/addToDo", (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log("Server Running"));
+app.listen(PORT, () => console.log("Server Running"));
